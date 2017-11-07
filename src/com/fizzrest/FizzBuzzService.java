@@ -12,7 +12,12 @@ public class FizzBuzzService {
    @GET
    @Path("/{upperBound}")
    @Produces(MediaType.APPLICATION_JSON)
-   public int getUser(@PathParam("upperBound") int upperBound){
-	  return upperBound;
+   public FizzBuzz getUser(@PathParam("upperBound") int upperBound){
+	  
+      FizzBuzz test = new FizzBuzz();
+      test.Populate(upperBound);
+  
+      
+	return test;
    }
 }

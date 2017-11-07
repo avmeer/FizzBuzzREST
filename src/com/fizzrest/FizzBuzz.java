@@ -12,7 +12,19 @@ public class FizzBuzz {
 	public FizzBuzz(){}
 	
 	public void Populate(int upperBound) {
-
+		for(int i = 1; i <= upperBound; i++) {
+			if(i%3 == 0 && i%5==0) {
+				fizzbuzz.add(i);
+			}
+			
+			else if(i%3 == 0) {
+				fizz.add(i);
+			}
+			
+			else if(i%5== 0) {
+				buzz.add(i);
+			}
+		}
 	}
 	
 	@JsonbProperty("Fizz")

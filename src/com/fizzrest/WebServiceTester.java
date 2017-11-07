@@ -28,14 +28,14 @@ public class WebServiceTester  {
    
    private void testFizzbuzz15(){
 	   
-	  ArrayList<Integer> expectedBuzz = new ArrayList<Integer>(Arrays.asList(3,6,9,12));
-	  ArrayList<Integer> expectedFizz= new ArrayList<Integer>(Arrays.asList(5,10));
+	  ArrayList<Integer> expectedBuzz = new ArrayList<Integer>(Arrays.asList(5,10));
+	  ArrayList<Integer> expectedFizz= new ArrayList<Integer>(Arrays.asList(3,6,9,12));
 	  ArrayList<Integer> expectedFizzBuzz= new ArrayList<Integer>(Arrays.asList(15));
 	  
       FizzBuzz fizz = client
          .target("http://localhost:8080/fizzbuzz/15")
          .request(MediaType.APPLICATION_JSON)
-         .get(new GenericType<FizzBuzz>() {});
+         .get(FizzBuzz.class);
 
       String result = FAIL;
       
@@ -43,6 +43,7 @@ public class WebServiceTester  {
          result = PASS;
       }
       System.out.println("Test case name: test input 15, Result: " + result );
+      System.out.println(fizz.getFizz());
    }
  
 }
