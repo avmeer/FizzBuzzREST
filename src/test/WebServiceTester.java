@@ -39,5 +39,11 @@ public class WebServiceTester extends JerseyTest {
         Response output = target("/foo").request().get();
         assertEquals("should return status 401", 401, output.getStatus());
     }
+    @Test
+    public void testFloatInput() {
+        Response output = target("/3.14").request().get();
+        assertEquals("should return status 401", 401, output.getStatus());
+    }
+    
 
 }
