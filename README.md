@@ -9,3 +9,5 @@ HTTP GET - http://localhost:8080/fizzbuzz/15
 
 
 Non integer or negative values will return an error.
+
+This application depends on [Jersey](https://jersey.github.io/).

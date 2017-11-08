@@ -24,6 +24,10 @@ public class WebServiceTester  {
       tester.testFizzbuzz50();
       
       tester.testFizzbuzz100();
+      
+      tester.testFizzbuzzNegative();
+      
+      tester.testFizzbuzzNonnumber();
    }
    
    private void testFizzbuzz15(){
@@ -75,6 +79,13 @@ public class WebServiceTester  {
          result = PASS;
       }
       System.out.println("Test case name: test input 100, Result: " + result );
+   }
+   
+   private void testFizzbuzzNegative(){
+	   
+   }
+   private void testFizzbuzzNonnumber() {
+   
    }
  
 }
