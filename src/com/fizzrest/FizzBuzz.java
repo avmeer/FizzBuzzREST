@@ -5,7 +5,7 @@ import java.util.List;
 import javax.json.bind.annotation.JsonbProperty;
 
 public class FizzBuzz {
-	//Store numbers for their respective 
+	//Store numbers for their respective word
 	List<Integer> fizz = new ArrayList<Integer>();
 	List<Integer> buzz = new ArrayList<Integer>();
 	List<Integer> fizzbuzz = new ArrayList<Integer>();
