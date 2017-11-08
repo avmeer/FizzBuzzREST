@@ -16,13 +16,20 @@ public class FizzBuzzService {
    @GET
    @Path("/{upperBound}")
    @Produces(MediaType.APPLICATION_JSON)
-   public FizzBuzz getUser(@PathParam("upperBound") int upperBound) throws FizzBuzzException{
+   public FizzBuzz getUser(@PathParam("upperBound") String param) throws FizzBuzzException{
+	   Integer upperBound;
+	    try {
+	    	upperBound = Integer.parseInt(param);
+	    } catch (Exception e) {
+	    	throw new FizzBuzzException("Input should be an integer");
+	    }
+	   
 	   if(upperBound>MAXVAL || upperBound < MINVAL) {
 		   throw new FizzBuzzException("Number should be from "+MINVAL+" to "+MAXVAL);
 	   }
-	FizzBuzz fizz = new FizzBuzz();
-	fizz.Populate(upperBound);
-	return fizz;
+		FizzBuzz fizz = new FizzBuzz();
+		fizz.Populate(upperBound);
+		return fizz;
 	
    }
 }
